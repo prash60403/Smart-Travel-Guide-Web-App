@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="A Smart Travel Guide that adapts to your connection and location." />
-  <title>Smart Travel Guide 🌍</title>
+  <title>Smart Travel Guide</title>
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png" type="image/png" />
-
-  <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -26,7 +26,7 @@
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <h2 class="logo">🌍 Travel Guide</h2>
+      <h2 class="logo">Travel Guide</h2>
       <ul class="nav-links">
         <li><a href="#cards-container">Attractions</a></li>
         <li><a href="#">Weather</a></li>
@@ -47,6 +47,16 @@
     <p>Locating you...</p>
   </div>
 
+  <section aria-label="Your Location on Map" style="margin-top: 40px;">
+  <h2 style="text-align:center;">Your Location</h2>
+  <div id="map" style="height: 400px; margin-top: 20px; border-radius: 10px;"></div>
+</section>
+
+<section id="weather" style="text-align: center; margin-top: 30px;">
+  <h2>🌤️ Weather at Your Location</h2>
+  <div id="weather-card" class="card" style="max-width: 300px; margin: 0 auto;"></div>
+</section>
+
   <!-- Status Message -->
   <p id="status" class="status-text" role="status" aria-live="polite"></p>
 
@@ -56,14 +66,10 @@
       <!-- Cards will be injected here -->
     </section>
   </main>
-<section aria-label="Your Location on Map" style="margin-top: 40px;">
-  <h2 style="text-align:center;">Your Location</h2>
-  <div id="map" style="height: 400px; margin-top: 20px; border-radius: 10px;"></div>
-</section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Smart Travel Guide. Built with 🧠, 💻, and ☕ by Prashanth.</p>
+    <p>&copy; 2025 Smart Travel Guide.</p>
   </footer>
 
   <!-- Scripts -->

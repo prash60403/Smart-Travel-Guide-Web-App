@@ -1,6 +1,5 @@
 const container = document.getElementById('cards-container');
 const statusDiv = document.getElementById('status');
-document.getElementById('loading').style.display = 'none';
 
 // 1. Get network condition
 let lowData = false;
@@ -18,7 +17,7 @@ if ('geolocation' in navigator) {
 
     // Simulated nearby attractions
     const attractions = [
-      { name: "Ancient Fort", image: "fort.jpg" },
+      { name: "Ancient Fort", image: "Rajasthan.jpg" },
       { name: "Waterfall Trail", image: "waterfall.jpg" },
       { name: "Local Market", image: "market.jpg" },
       { name: "Sunset Point", image: "sunset.jpg" },
@@ -63,6 +62,7 @@ function initLazyLoader() {
 
   cards.forEach(card => observer.observe(card));
 }
+document.getElementById('loading').style.display = 'none';
 
 // Initialize Leaflet map
 const map = L.map('map').setView([latitude, longitude], 13);
@@ -77,3 +77,20 @@ L.marker([latitude, longitude])
   .addTo(map)
   .bindPopup('You are here!')
   .openPopup();
+
+  const API_KEY = "0b626b9550f79cc7af6d4e9bf12dbf8b"; // Replace this
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('weather-card').innerHTML = `
+      <h3>${data.name}</h3>
+      <p>${data.weather[0].main} - ${data.weather[0].description}</p>
+      <p>🌡️ ${data.main.temp}°C | 💨 Wind: ${data.wind.speed} m/s</p>
+      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
+    `;
+  })
+  .catch(err => {
+    console.error("Weather fetch failed:", err);
+    document.getElementById('weather-card').innerHTML = "<p>Weather unavailable</p>";
+  });
