@@ -7,7 +7,7 @@
   <meta name="description" content="A Smart Travel Guide that adapts to your connection and location." />
   <title>Smart Travel Guide 🌍</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
@@ -17,19 +17,44 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Smart Travel Guide</h1>
-    <p id="status">Detecting your location...</p>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <h2 class="logo">🌍 Travel Guide</h2>
+      <ul class="nav-links">
+        <li><a href="#cards-container">Attractions</a></li>
+        <li><a href="#">Weather</a></li>
+        <li><a href="#">Map</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero">
+    <h1>Discover Nearby Attractions</h1>
+    <p class="subtext">Tailored for your location and network.</p>
   </header>
 
+  <!-- Loading Spinner -->
+  <div id="loading" class="spinner-wrapper">
+    <div class="spinner"></div>
+    <p>Locating you...</p>
+  </div>
+
+  <!-- Status Message -->
+  <p id="status" class="status-text" role="status" aria-live="polite"></p>
+
+  <!-- Main Content -->
   <main>
-    <section id="cards-container" aria-live="polite">
-      <!-- Cards are injected here dynamically -->
+    <section id="cards-container" aria-label="Attractions near you">
+      <!-- Cards will be injected here -->
     </section>
   </main>
 
-  <footer style="text-align:center; margin-top: 40px; color: #666;">
-    <small>&copy; 2025 Smart Travel Guide..</small>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smart Travel Guide. Built with 🧠, 💻, and ☕ by Prashanth.</p>
   </footer>
 
   <!-- Scripts -->
