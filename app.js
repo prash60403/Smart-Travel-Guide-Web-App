@@ -15,7 +15,13 @@ if ('geolocation' in navigator) {
     const { latitude, longitude } = pos.coords;
     statusDiv.textContent = `You are here: [${latitude.toFixed(4)}, ${longitude.toFixed(4)}]`;
 
-    
+    // Simulated nearby attractions
+    const attractions = [
+      { name: "Ancient Fort", image: "images/fort.jpg" },
+      { name: "Waterfall Trail", image: "images/waterfalls_trail.jpg" },
+      { name: "Local Market", image: "images/market.jpg" },
+      { name: "Sunset Point", image: "images/sunsetpoint.jpg" },
+    ];
 
     attractions.forEach((place, index) => {
       const card = document.createElement('div');
