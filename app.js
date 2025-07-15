@@ -1,5 +1,6 @@
 const container = document.getElementById('cards-container');
 const statusDiv = document.getElementById('status');
+document.getElementById('loading').style.display = 'none';
 
 // 1. Get network condition
 let lowData = false;
