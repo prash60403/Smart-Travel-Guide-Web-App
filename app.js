@@ -63,3 +63,17 @@ function initLazyLoader() {
 
   cards.forEach(card => observer.observe(card));
 }
+
+// Initialize Leaflet map
+const map = L.map('map').setView([latitude, longitude], 13);
+
+// Use OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Add marker at user's location
+L.marker([latitude, longitude])
+  .addTo(map)
+  .bindPopup('You are here!')
+  .openPopup();

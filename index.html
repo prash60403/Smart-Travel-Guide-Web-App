@@ -13,6 +13,11 @@
   <!-- Favicon -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png" type="image/png" />
 
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -51,6 +56,10 @@
       <!-- Cards will be injected here -->
     </section>
   </main>
+<section aria-label="Your Location on Map" style="margin-top: 40px;">
+  <h2 style="text-align:center;">📍 Your Location</h2>
+  <div id="map" style="height: 400px; margin-top: 20px; border-radius: 10px;"></div>
+</section>
 
   <!-- Footer -->
   <footer>
